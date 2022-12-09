@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+# Wheather_App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Wheather_App it's a one-page site for viewing the weather in your city or anywhere else on the planet
 
-## Available Scripts
+## Technologies & Tools Used:
 
-In the project directory, you can run:
+- Java Script
+- HTML
+- CSS
+- React.js
+- Tailwind CSS
+- React-Toastify
 
-### `npm start`
+## Description 
+On this site you can find out the weather for 5 hours ahead and 5 days ahead for your location or in any other city you want, also the site changes the design at low and high temperature
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Clone my project to your desktop:
+   - Click “Code” and copy the given URL.
+   - Open "Terminal" and change the current working directory to the location for a cloned project.
+   - Type 
+   
+bash 
+   git clone {repository URL}
+## Install Tailwind CSS
+Install tailwindcss via npm, and create your tailwind.config.js file.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Terminal
+```
+npm install -D tailwindcss
+npx tailwindcss init
+```
 
-### `npm test`
+Configure your template paths
+Add the paths to all of your template files in your tailwind.config.js file.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+tailwind.config.js
+```/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+Add the Tailwind directives to your CSS
+Add the @tailwind directives for each of Tailwind’s layers to your main CSS file.
 
-### `npm run build`
+src/input.css
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+Start the Tailwind CLI build process
+Run the CLI tool to scan your template files for classes and build your CSS.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Terminal
+```
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch  
+ ```
+## Installation react-toastify
+```
+$ npm install --save react-toastify
+$ yarn add react-toastify
+```
+## Requirements 
+For development, you will need Node.js and  Gulp installed on your environement.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Node
+[Node](https://nodejs.org/en/) is really easy to install & now include [NPM](https://www.npmjs.com). You should be able to run the following command after the installation procedure below.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+bash 
+$ node --version
+v0.10.24
 
-### `npm run eject`
+$ npm --version
+1.3.21
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Node installation on OS X
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You will need to use a Terminal. On OS X, you can find the default terminal in /Applications/Utilities/Terminal.app.
 
-## Learn More
+Please install [Homebrew](https://brew.sh) if it's not already done with the following command.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+bash 
+$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+If everything when fine, you should run
+bash
+brew install node
 
-### Code Splitting
+#### Node installation on Linux
+ bash
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Node installation on Windows
+Go on official [Node.js website](https://nodejs.org/en/) & grab the installer. Also, be sure to have git available in your PATH, npm might need it.
 
-### Analyzing the Bundle Size
+### Gulp 
+- Check for node, npm, and npx
+ bash
+node --version
+npm --version
+npx --version
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+If they are not installed, follow the instructions [here](https://nodejs.org/en/).
 
-### Making a Progressive Web App
+- Install the gulp command line utility
+ bash
+npm install gulp -g
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### Project Dependencies
+Install project dependencies
+bash
+npm install 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  OR use this command to speed up installation
+bash
+npm ci 
 
-### Deployment
+(about the differences between npm install and npm ci you can read [here](https://docs.npmjs.com/cli/v8/commands/npm-ci))
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Start the development environment 
+bash 
+npm start
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Simple build for production
+bash
+npm run build
